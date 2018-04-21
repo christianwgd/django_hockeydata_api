@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load i18n static %}
+
+{% block content %}
+
+<div>
+
+    <h4>Hockeydata widgets</h4>
+
+    <ul>
+        <li><a href="{% url 'game_slider' %}">Game Slider</a> (links to Game Live Box)</li>
+        <li><a href="{% url 'schedule' %}">Schedule</a> (links to Game Report)</li>
+        <li><a href="{% url 'standings' %}">Standings</a> (Links to Team Full Page)</li>
+        <li><a href="{% url 'player_stats' %}">Field Player Statistics</a> (links to Player)</li>
+
+    </ul>
+
+</div>
+
+{% endblock %}

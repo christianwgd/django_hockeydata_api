@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n static widget_tags %}
+
+{% block extra_head_content %}
+{{ block.super }}
+<!-- Hockeydata css -->
+{% hockeydata_css 'los_schedule' %}
+<!-- custom widget css -->
+<link href="{% static 'js/style.css' %}" rel="stylesheet">
+
+<!-- Hockeydata Javascript -->
+{% hockeydata_js 'los_schedule' %}
+{% endblock %}
+
+<h3>{% block title %}Schedule Widget{% endblock %}</h3>
+
+{% block content %}
+
+<div>
+    {% hockeydata_widget widgetName='hockeydata.los.Schedule' divisionId='nev-vln-hr' rowLink='/game_report/%s' %}
+</div>
+
+{% endblock %}

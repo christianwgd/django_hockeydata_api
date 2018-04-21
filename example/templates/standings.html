@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n static widget_tags %}
+
+{% block extra_head_content %}
+{{ block.super }}
+<!-- Hockeydata css -->
+{% hockeydata_css 'los_standings' %}
+<!-- custom widget css -->
+<link href="{% static 'js/style.css' %}" rel="stylesheet">
+
+<!-- Hockeydata Javascript -->
+{% hockeydata_js 'los_standings' %}
+{% endblock %}
+
+<h3>{% block title %}Standings Widget{% endblock %}</h3>
+
+{% block content %}
+
+<div>
+    {% hockeydata_widget widgetName='hockeydata.los.Standings' divisionId='nev-vln-hr' showTeamShortName=True rowLink='/team_fullpage/%s' %}
+</div>
+
+{% endblock %}

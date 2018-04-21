@@ -1,0 +1,36 @@
+<script>
+$(document).ready(function() {
+    var options = JSON.parse('{{ options|escapejs  }}');
+    if (options.apiKey === '')
+        console.log('Warning: no HOCKEYDATA_API_KEY provided');
+    if (typeof(options.error) !== 'undefined') {
+        $('#hockeydata_api').html('<p>Error: '+options.error+'</p>');
+    } else {
+        // responsive settings for widget types
+        var size = "long";
+        var mobile = false;
+        if ($(window).width() < 400) {
+            size = "short";
+            mobile = true;
+        }
+        switch(options.widgetName) {
+            case 'hockeydata.los.Standings':
+                options['columnSet'] = size;
+                break;
+            case 'hockeydata.los.Schedule':
+                options['columnSet'] = size;
+                if (mobile)
+                    options["additionalColumns"]= [{
+                        "position": 0,
+                        "column": "scheduledDate"
+                    }]
+                break;
+            default:
+        } 
+        options ['$domNode'] = $("#hockeydata_api");
+        var standings = new hockeydata.util.Widget(options);
+    }
+});
+</script>
+
+<div id="hockeydata_api"></div>

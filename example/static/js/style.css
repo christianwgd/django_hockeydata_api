@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.-hd-util-intellitable-data > table > thead > tr {
+    background-color: #666;
+    color: white;
+}
+
+.-hd-util-intellitable-data {
+    font-family: 'Roboto', sans-serif;
+}
+
+.-hd-util-intellitable-data > table > tbody > tr:nth-child(odd) {
+    background-color:white;
+}
+
+.-hd-util-intellitable-data > table > tbody > tr:nth-child(even) {
+    background-color: #eee;
+}
+
+.-hd-los-standings-col-tableRank {
+    font-weight: bold;
+}
+
+.-hd-util-intellitable .-hd-util-intellitable-data .-hd-util-intellitable-inline-image {
+    padding: 4px 6px;
+    text-align: center;
+}
+
+/* Slider */
+/*.-hd-los-game-slider .-hd-util-slider-content td:nth-child(odd) {*/
+    /*background-color:rgba(19, 145, 59, 1.0);*/
+    /*color: white;*/
+    /**/
+/*}*/
+/*.-hd-los-game-slider .-hd-util-slider-content td:nth-child(even) {*/
+    /*background-color: rgba(224, 2, 36, 1.0);*/
+    /*color: white;*/
+/*}*/

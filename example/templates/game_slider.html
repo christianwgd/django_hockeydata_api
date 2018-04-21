@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n static widget_tags %}
+
+{% block extra_head_content %}
+{{ block.super }}
+<!-- Hockeydata css -->
+{% hockeydata_css 'los_gameslider' %}
+<!-- custom widget css -->
+<link href="{% static 'js/style.css' %}" rel="stylesheet">
+
+<!-- Hockeydata Javascript -->
+{% hockeydata_js 'los_gameslider' %}
+{% endblock %}
+
+<h3>{% block title %}Game Slider Widget{% endblock %}</h3>
+
+{% block content %}
+
+<div>
+    {% hockeydata_widget widgetName='hockeydata.los.GameSlider' divisionId='nev-vln-hr' showTeamShortName=True gameLink='/game_livebox/%s' %}
+</div>
+
+{% endblock %}

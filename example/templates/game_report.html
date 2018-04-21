@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load i18n static widget_tags %}
+
+{% block extra_head_content %}
+{{ block.super }}
+<!-- Hockeydata css -->
+{% hockeydata_css 'los_game_fullreport' %}
+<!-- custom widget css -->
+<link href="{% static 'js/style.css' %}" rel="stylesheet">
+
+<!-- Hockeydata Javascript -->
+{% hockeydata_js 'los_game_fullreport' %}
+{% endblock %}
+
+<h3>{% block title %}Game Full Report Widget{% endblock %}</h3>
+
+{% block content %}
+
+<div class="row" id="tab-container">
+    <div class="col-md-12">
+        {% hockeydata_widget widgetName='hockeydata.los.Game.FullReport' divisionId='nev-vln-hr' gameId=gameId autoReload=True %}
+    </div>
+</div>
+
+{% endblock %}

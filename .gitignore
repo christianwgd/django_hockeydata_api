@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+!requirements.txt
+!.gitignore
+.idea/photos.iml
+media/
+__pycache__/
+localsettings.py
+.vscode
+*.pyc
+
+

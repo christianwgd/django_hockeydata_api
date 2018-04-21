@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load i18n static widget_tags %}
+
+{% block extra_head_content %}
+{{ block.super }}
+<!-- Hockeydata css -->
+{% hockeydata_css 'los_leaders' %}
+<!-- custom widget css -->
+<link href="{% static 'js/style.css' %}" rel="stylesheet">
+
+<!-- Hockeydata Javascript -->
+{% hockeydata_js 'los_leaders' %}
+{% endblock %}
+
+{% block content %}
+
+<div>
+    {% hockeydata_widget widgetName='hockeydata.los.Leaders' divisionId='nev-vln-hr' type='FieldPlayers' gameLink='/hockeydata_api/game_report/%s' %}
+</div>
+
+{% endblock %}
