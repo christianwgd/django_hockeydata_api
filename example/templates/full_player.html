@@ -4,20 +4,20 @@
 {% block extra_head_content %}
 {{ block.super }}
 <!-- Hockeydata css -->
-{% hockeydata_css 'los_leaders' %}
+{% hockeydata_css 'los_player_fullpage' %}
 <!-- custom widget css -->
 <link href="{% static 'js/style.css' %}" rel="stylesheet">
 
 <!-- Hockeydata Javascript -->
-{% hockeydata_js 'los_leaders' %}
+{% hockeydata_js 'los_player_fullpage' %}
 {% endblock %}
 
-<h3>{% block title %}Player Statistics{% endblock %}</h3>
+<h3>{% block title %}Full Player{% endblock %}</h3>
 
 {% block content %}
 
 <div>
-    {% hockeydata_widget widgetName='hockeydata.los.Leaders' divisionId='nev-vln-hr' type='FieldPlayers' rowLink='/full_player/%s' %}
+    {% hockeydata_widget widgetName='hockeydata.los.Player.FullPage' divisionId='nev-vln-hr' playerId=playerId %}
 </div>
 
 {% endblock %}

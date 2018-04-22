@@ -35,5 +35,9 @@ def player_stats(request):
     return render(request, 'player_stats.html', {})
 
 
+def full_player(request, playerId):
+    return render(request, 'full_player.html', {'playerId': playerId})
+
+
 def team_fullpage(request, teamId):
     return render(request, 'team_fullpage.html', {'teamId': teamId})

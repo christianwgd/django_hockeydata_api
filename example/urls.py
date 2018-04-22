@@ -30,6 +30,7 @@ urlpatterns = [
     path('game_livebox/<str:gameId>', views.game_livebox, name='game_livebox'),
 
     path('player_stats/', views.player_stats, name='player_stats'),
+    path('full_player/<str:playerId>', views.full_player, name='full_player'),
     path('team_fullpage/<str:teamId>', views.team_fullpage, name='team_fullpage'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
