@@ -10,7 +10,7 @@ localsettings.py
 db.*
 build/
 dist/
-*egg-info/
+django_hockeydata_api.egg-info/
 
 
 
