@@ -26,11 +26,12 @@ urlpatterns = [
     path('standings/', views.standings, name='standings'),
     path('schedule/', views.schedule, name='schedule'),
 
-    path('game_report/<str:gameId>', views.game_report, name='game_report'),
-    path('game_livebox/<str:gameId>', views.game_livebox, name='game_livebox'),
+    path('game_report/<str:gameId>/', views.game_report, name='game_report'),
+    path('game_livebox/<str:gameId>/', views.game_livebox, name='game_livebox'),
 
     path('player_stats/', views.player_stats, name='player_stats'),
-    path('full_player/<str:playerId>', views.full_player, name='full_player'),
-    path('team_fullpage/<str:teamId>', views.team_fullpage, name='team_fullpage'),
+    path('full_player/<str:playerId>/', views.full_player, name='full_player'),
+    path('team_fullpage/<str:teamId>/',
+         views.team_fullpage, name='team_fullpage'),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
