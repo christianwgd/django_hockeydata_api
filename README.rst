@@ -9,7 +9,7 @@ Requirements
 ------------
 
 - Python 2.7+, 3.6+
-- Django >= 1.11
+- Django >= 1.11 (tested with this, earlier versions might work also)
 - For details, see https://docs.djangoproject.com/en/dev/faq/install/#faq-python-version-support
 
 
