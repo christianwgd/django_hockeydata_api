@@ -4,20 +4,22 @@
 {% block extra_head_content %}
 {{ block.super }}
 <!-- Hockeydata css -->
-{% hockeydata_css 'los_standings' %}
+{% hockeydata_css 'los_gameslider' 'los_standings' %} <!-- you can set multiple options for css or js -->
 <!-- custom widget css -->
 <link href="{% static 'js/style.css' %}" rel="stylesheet">
 
 <!-- Hockeydata Javascript -->
-{% hockeydata_js 'los_standings' %}
+{% hockeydata_js 'los_gameslider' 'los_standings' %}
+
+<!-- widgets -->
+{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='nev' showTeamShortName=True showDivisionName=True gameLink='/game_livebox/%s/' %}
+{% hockeydata_widget domNode='#standings' widgetName='hockeydata.los.Standings' divisionId='nev-vln-hr' showTeamShortName=True rowLink='/team_fullpage/%s' %}
+
 {% endblock %}
 
 <h3>{% block title %}Standings Widget{% endblock %}</h3>
 
 {% block content %}
-
-<div>
-    {% hockeydata_widget widgetName='hockeydata.los.Standings' divisionId='nev-vln-hr' showTeamShortName=True rowLink='/team_fullpage/%s' %}
-</div>
-
+<div id="gameslider"></div>
+<div id="standings" style="margin-top:20px;"></div>
 {% endblock %}

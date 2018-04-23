@@ -10,14 +10,28 @@
 
 <!-- Hockeydata Javascript -->
 {% hockeydata_js 'los_leaders' %}
+
+<!-- widgets -->
+{% hockeydata_widget domNode='#fieldPlayers' widgetName='hockeydata.los.Leaders' divisionId='nev-vln-hr' type='FieldPlayers' limit=10 rowLink='/full_player/%s' %}
+{% hockeydata_widget domNode='#goalKeepers' widgetName='hockeydata.los.Leaders' divisionId='nev-vln-hr' type='Goalkeepers' rowLink='/full_player/%s' %}
+{% hockeydata_widget domNode='#badBoys' widgetName='hockeydata.los.Leaders' divisionId='nev-vln-hr' type='BadBoys' limit=10 rowLink='/full_player/%s' %}
+
 {% endblock %}
 
 <h3>{% block title %}Player Statistics{% endblock %}</h3>
 
 {% block content %}
 
-<div>
-    {% hockeydata_widget widgetName='hockeydata.los.Leaders' divisionId='nev-vln-hr' type='FieldPlayers' rowLink='/full_player/%s' %}
+<h4>Field Players</h4>
+<div id="fieldPlayers">
+</div>
+
+<h4>Goal Keepers</h4>
+<div id="goalKeepers">
+</div>
+
+<h4>Bad Boys</h4>
+<div id="badBoys">
 </div>
 
 {% endblock %}

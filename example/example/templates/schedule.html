@@ -10,14 +10,14 @@
 
 <!-- Hockeydata Javascript -->
 {% hockeydata_js 'los_schedule' %}
+
+<!-- widgets -->
+{% hockeydata_widget domNode='#schedule' widgetName='hockeydata.los.Schedule' divisionId='nev-vln-hr' rowLink='/game_report/%s' %}
+
 {% endblock %}
 
 <h3>{% block title %}Schedule Widget{% endblock %}</h3>
 
 {% block content %}
-
-<div>
-    {% hockeydata_widget widgetName='hockeydata.los.Schedule' divisionId='nev-vln-hr' rowLink='/game_report/%s' %}
-</div>
-
+<div id="schedule"></div>
 {% endblock %}

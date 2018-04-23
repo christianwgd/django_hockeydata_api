@@ -10,14 +10,14 @@
 
 <!-- Hockeydata Javascript -->
 {% hockeydata_js 'los_team_fullpage' %}
+
+<!-- widgets -->
+{% hockeydata_widget domNode='#team' widgetName='hockeydata.los.Team.FullPage' divisionId='nev-vln-hr' teamId=teamId %}
+
 {% endblock %}
 
 <h3>{% block title %}Team Full Page Widget{% endblock %}</h3>
 
 {% block content %}
-
-<div>
-    {% hockeydata_widget widgetName='hockeydata.los.Team.FullPage' divisionId='nev-vln-hr' teamId=teamId %}
-</div>
-
+<div id="team"></div>
 {% endblock %}

@@ -10,16 +10,14 @@
 
 <!-- Hockeydata Javascript -->
 {% hockeydata_js 'los_game_livebox' %}
+
+<!-- widgets -->
+{% hockeydata_widget domNode='#livebox' widgetName='hockeydata.los.Game.LiveBox' divisionId='nev-vln-hr' gameId=gameId autoReload=True %}
+
 {% endblock %}
 
 <h3>{% block title %}Game LiveBox Widget{% endblock %}</h3>
 
 {% block content %}
-
-<div class="row" id="tab-container">
-    <div class="col-md-12">
-        {% hockeydata_widget widgetName='hockeydata.los.Game.LiveBox' divisionId='nev-vln-hr' gameId=gameId autoReload=True %}
-    </div>
-</div>
-
+<div id="livebox"></div>
 {% endblock %}
