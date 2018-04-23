@@ -20,7 +20,7 @@ def hockeydata_widget(domNode, widgetName, divisionId, *args, **kwargs):
     else:
         options['apiKey'] = apiKey
         options['sport'] = sport
-    print(options)
+
     return {'options': json.dumps(options)}
 
 
