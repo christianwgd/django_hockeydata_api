@@ -57,7 +57,25 @@ Example template
 Documentation
 -------------
 
-TODO
+hockeydata api documentation: http://apidocs.hockeydata.net/
+hockeydata widget reference: https://apidocs.hockeydata.net/javascript-api/
+
+
+Example app
+-----------
+
+The example app is created for running with django 1.11.
+
+1. create virtualenv
+
+2. install django with 'pip install django==1.11.xx' where xx is the latest minor version.
+   See https://www.djangoproject.com/download/ for more information.
+
+3. install django_hockeydata_api as described above
+
+4. copy example app to a folder of your choice
+
+5. run using 'python manage.py runserver'. No database or user is required, so you can skip 'python manage.py migrate'.
 
 
 Bugs and suggestions
