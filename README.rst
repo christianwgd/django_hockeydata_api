@@ -64,12 +64,12 @@ hockeydata widget reference: https://apidocs.hockeydata.net/javascript-api/
 Example app
 -----------
 
-The example app is created for running with django 1.11.
+The example app is created for running with django 2.0!
 
 1. create virtualenv
 
-2. install django with 'pip install django==1.11.xx' where xx is the latest minor version.
-   See https://www.djangoproject.com/download/ for more information.
+2. install django with 'pip install django'.
+   See https://www.djangoproject.com/ for more information.
 
 3. install django_hockeydata_api as described above
 
