@@ -4,18 +4,20 @@
 {% block extra_head_content %}
 {{ block.super }}
 <!-- Hockeydata css -->
-{% hockeydata_css 'los_player_fullpage' %}
+{% hockeydata_css 'los_livegames' %} <!-- you can set multiple options for css or js -->
 <!-- custom widget css -->
 <link href="{% static 'js/style.css' %}" rel="stylesheet">
 
 <!-- Hockeydata Javascript -->
-{% hockeydata_js 'los_player_fullpage' %}
-´´
+{% hockeydata_js 'los_livegames' %}
+
 <!-- widgets -->
-{% hockeydata_widget domNode='#player' widgetName='hockeydata.los.Player.FullPage' divisionId='nev-vln-hr' gameLink='/game_report/%s/' %}
+{% hockeydata_widget domNode='#livegames' widgetName='hockeydata.los.LiveGames' divisionId='nev-vln-hr' %}
 
 {% endblock %}
 
+<h3>{% block title %}Live Games{% endblock %}</h3>
+
 {% block content %}
-<div id="player"></div>
+<div id="livegames"></div>
 {% endblock %}
