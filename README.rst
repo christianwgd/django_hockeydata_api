@@ -16,7 +16,7 @@ Requirements
 Installation
 ------------
 
-1. Install using pip:
+1. Install using pip (not available at this time, TODO):
 
    ``pip install django_hockeydata_api``
 
