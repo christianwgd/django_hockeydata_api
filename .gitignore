@@ -8,5 +8,9 @@ localsettings.py
 .vscode
 *.pyc
 db.*
+build/
+dist/
+*egg-info/
+
 
 
