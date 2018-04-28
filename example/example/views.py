@@ -11,12 +11,20 @@ def game_slider(request):
     return render(request, 'game_slider.html', {})
 
 
+def live_games(request):
+    return render(request, 'live_games.html', {})
+
+
 def standings(request):
     return render(request, 'standings.html', {})
 
 
 def schedule(request):
     return render(request, 'schedule.html', {})
+
+
+def knockout_stage(request):
+    return render(request, 'knockout_stage.html', {})
 
 
 def game_report(request, gameId):

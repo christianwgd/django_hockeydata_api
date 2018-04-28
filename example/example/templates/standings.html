@@ -12,12 +12,12 @@
 {% hockeydata_js 'los_gameslider' 'los_standings' %}
 
 <!-- widgets -->
-{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='nev' showTeamShortName=True showDivisionName=True gameLink='/game_livebox/%s/' %}
-{% hockeydata_widget domNode='#standings' widgetName='hockeydata.los.Standings' divisionId='nev-vln-hr' showTeamShortName=True rowLink='/team_fullpage/%s' %}
+{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='nev' showTeamShortName=True showDivisionName=True gameLink='/game_report/%s/' %}
+{% hockeydata_widget domNode='#standings' widgetName='hockeydata.los.Standings' divisionId='nev-vln-hr' showTeamShortName=True rowLink='/team_fullpage/%s/' %}
 
 {% endblock %}
 
-<h3>{% block title %}Standings Widget{% endblock %}</h3>
+<h3>{% block title %}Game Slider with Standings Widget{% endblock %}</h3>
 
 {% block content %}
 <div id="gameslider"></div>

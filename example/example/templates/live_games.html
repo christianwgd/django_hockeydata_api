@@ -4,20 +4,20 @@
 {% block extra_head_content %}
 {{ block.super }}
 <!-- Hockeydata css -->
-{% hockeydata_css 'los_game_livebox' %}
+{% hockeydata_css 'los_livegames' %} <!-- you can set multiple options for css or js -->
 <!-- custom widget css -->
 <link href="{% static 'js/style.css' %}" rel="stylesheet">
 
 <!-- Hockeydata Javascript -->
-{% hockeydata_js 'los_game_livebox' %}
+{% hockeydata_js 'los_livegames' %}
 
 <!-- widgets -->
-{% hockeydata_widget domNode='#livebox' widgetName='hockeydata.los.Game.LiveBox' divisionId='nev-vln-hr' gameId=gameId autoReload=True %}
+{% hockeydata_widget domNode='#livegames' widgetName='hockeydata.los.LiveGames' divisionId='nev-vln-hr' %}
 
 {% endblock %}
 
-<h3>{% block title %}Game LiveBox Widget{% endblock %}</h3>
+<h3>{% block title %}Live Games{% endblock %}</h3>
 
 {% block content %}
-<div id="livebox"></div>
+<div id="livegames"></div>
 {% endblock %}

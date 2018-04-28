@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load i18n static widget_tags %}
+
+{% block extra_head_content %}
+{{ block.super }}
+<!-- Hockeydata css -->
+{% hockeydata_css 'los_knockoutstage' %}
+<!-- custom widget css -->
+<link href="{% static 'js/style.css' %}" rel="stylesheet">
+
+<!-- Hockeydata Javascript -->
+{% hockeydata_js 'los_knockoutstage' %}
+
+<!-- widgets -->
+{% hockeydata_widget domNode='#knockout_stage' widgetName='hockeydata.los.KnockoutStage' divisionId='nev_rl_po' gameLink='/game_report/%s/' teamLink='/team_fullpage/%s' %}
+
+{% endblock %}
+
+<h3>{% block title %}Knockout Stage{% endblock %}</h3>
+
+{% block content %}
+<div id="knockout_stage"></div>
+{% endblock %}

@@ -23,8 +23,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('game_slider/', views.game_slider, name='game_slider'),
+    path('live_games/', views.live_games, name='live_games'),
     path('standings/', views.standings, name='standings'),
     path('schedule/', views.schedule, name='schedule'),
+    path('knockout_stage/', views.knockout_stage, name='knockout_stage'),
 
     path('game_report/<str:gameId>/', views.game_report, name='game_report'),
     path('game_livebox/<str:gameId>/', views.game_livebox, name='game_livebox'),
