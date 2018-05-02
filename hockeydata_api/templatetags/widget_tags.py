@@ -35,7 +35,7 @@ def hockeydata_css(*args, **kwargs):
         css_links = '<link href="{url}css/?{default}" rel="stylesheet">\n'.format(
             url=url, default=default_css)
     else:
-        css_links = '<link href="{url}css/" rel="stylesheet">\n'.format(
+        css_links = '<link href="{url}css/?los_template_default" rel="stylesheet">\n'.format(
             url=url)
 
     widgets = '?{widget}'.format(widget=args[0])
