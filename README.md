@@ -80,4 +80,4 @@ https://git.wgdnet.de/cwiegand/django_hockeydata_api/issues
 
 ## License
 
-You can use this under BSD-License. See `LICENSE `_ file for details. 
+You can use this under BSD-License. See [LICENSE](LICENSE) file for details. 
