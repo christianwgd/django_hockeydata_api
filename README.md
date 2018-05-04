@@ -3,12 +3,17 @@
 A Django package for simple use of Hockeydata Javascript API [https://apidocs.hockeydata.net/](https://apidocs.hockeydata.net/).
 
 
+
+
+
 ## Requirements
 
 - Python 2.7+, 3.6+
 - Django >= 1.11 (tested with this, earlier versions might work also)
 - For details, see [https://docs.djangoproject.com/en/dev/faq/install/#faq-python-version-support](https://docs.djangoproject.com/en/dev/faq/install/#faq-python-version-support)
-
+    
+ 
+ 
 
 ## Installation
 
@@ -50,9 +55,9 @@ Alternatively, you can install download or clone this repo and call `pip install
 
 ## Documentation
 
-hockeydata api documentation: http://apidocs.hockeydata.net/
+hockeydata api documentation: [http://apidocs.hockeydata.net/](http://apidocs.hockeydata.net/)
 
-hockeydata widget reference: https://apidocs.hockeydata.net/javascript-api/
+hockeydata widget reference: [https://apidocs.hockeydata.net/javascript-api/](http://apidocs.hockeydata.net/javascript-api/)
 
 
 ## Example app
