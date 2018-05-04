@@ -14,13 +14,13 @@ A Django package for simple use of Hockeydata Javascript API (https://apidocs.ho
 
 1. Install using pip (not available at this time, TODO):
 
-...```pip install django_hockeydata_api```
+   ```pip install django_hockeydata_api```
 
-...Alternatively, you can install download or clone this repo and call ```pip install -e .```.
+   Alternatively, you can install download or clone this repo and call ```pip install -e .```.
 
 2. Add to INSTALLED_APPS in your ```settings.py```:
 
-...```'hockeydata_api',```
+   ```'hockeydata_api',```
 
 3. In your templates, load the ``widget_tags`` library:
 
