@@ -26,6 +26,7 @@ Alternatively, you can install download or clone this repo and call `pip install
 ## Example template
 
 ```
+{% extends "base.html" %}
 {% load widget_tags %}
 
 {% block extra_head_content %}
