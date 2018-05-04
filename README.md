@@ -16,9 +16,9 @@ A Django package for simple use of Hockeydata Javascript API (https://apidocs.ho
 
 ```pip install django_hockeydata_api```
 
-Alternatively, you can install download or clone this repo and call ```pip install -e .```.
+Alternatively, you can install download or clone this repo and call `pip install -e .`.
 
-2. Add to INSTALLED_APPS in your ```settings.py```:
+2. Add to INSTALLED_APPS in your `settings.py`:
 
 ```'hockeydata_api',```
 
