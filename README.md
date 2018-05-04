@@ -52,6 +52,7 @@ A Django package for simple use of Hockeydata Javascript API (https://apidocs.ho
 ## Documentation
 
 hockeydata api documentation: http://apidocs.hockeydata.net/
+
 hockeydata widget reference: https://apidocs.hockeydata.net/javascript-api/
 
 
