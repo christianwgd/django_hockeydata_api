@@ -38,24 +38,35 @@ Example template
 
     {% block extra_head_content %}
     {{ block.super }}
+
     <!-- Hockeydata css -->
     {% hockeydata_css 'los_player_fullpage' %}
+
     <!-- custom widget css -->
     <link href="{% static 'js/style.css' %}" rel="stylesheet">
 
-    <!-- Hockeydata Javascript -->
+    <!-- Hockeydata javascript -->
     {% hockeydata_js 'los_player_fullpage' %}
+
+    <!-- Hockeydata Widget -->
+    {% hockeydata_widget widgetName='hockeydata.los.Player.FullPage' divisionId='<yourDivisionId>' playerId=playerId %}
     {% endblock %}
 
     {% block content %}
-    <div>
-        {% hockeydata_widget widgetName='hockeydata.los.Player.FullPage' divisionId='nev-vln-hr' playerId=playerId %}
-    </div>
+    <div id='#player'></div>
     {% endblock %}
 
 
 Documentation
 -------------
+
+The Templatetags can receive almost all hockeydata widget options, just write them down in python syntax (e.g. true --> True). 
+At the moment there is one special option for the game slider widget to get the gameLink parameter from a callback function. This is useful if you want a gameslider for multiple divisions (e.g. for all divsions of an association):
+
+    .. code:: Django
+    {% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='<yourDivisionId>' gameLink='/link_to_game/%G/%D' gameLinkFromCallback=True %}
+
+%G will be replaced by Game-ID and %D by Divsion-ID if gameLinkFromCallback is true.
 
 hockeydata api documentation: http://apidocs.hockeydata.net/
 hockeydata widget reference: https://apidocs.hockeydata.net/javascript-api/
@@ -75,7 +86,9 @@ The example app is created for running with django 2.0!
 
 4. copy example app to a folder of your choice
 
-5. run using 'python manage.py runserver'. No database or user is required, so you can skip 'python manage.py migrate'.
+5. replace all <divisionID> in the template files in example/templates with your Division-ID
+
+6. run using 'python manage.py runserver'. No database or user is required, so you can skip 'python manage.py migrate'.
 
 
 Bugs and suggestions

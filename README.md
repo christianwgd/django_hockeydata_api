@@ -29,18 +29,22 @@ Alternatively, you can install download or clone this repo and call `pip install
 {% block extra_head_content %}
 {{ block.super }}
 
+<!-- Hockeydata css -->
 {% hockeydata_css 'los_player_fullpage' %}
 
+<!-- custom widget css -->
+<link href="{% static 'js/style.css' %}" rel="stylesheet">
+
+<!-- Hockeydata javascript -->
 {% hockeydata_js 'los_player_fullpage' %}
+
+<!-- Hockeydata Widget -->
+{% hockeydata_widget domNode='#player' widgetName='hockeydata.los.Player.FullPage' divisionId='<yourDivisionId>' playerId=playerId %}
 {% endblock %}
 
 {% block content %}
-
-{% hockeydata_widget domNode='#player' widgetName='hockeydata.los.Player.FullPage' divisionId='<yourDivisionId>' playerId=playerId %}
-
-{% endblock %}
-
 <div id='#player'></div>
+{% endblock %}
 ```
 
 ## Documentation
