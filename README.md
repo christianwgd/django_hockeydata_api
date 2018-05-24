@@ -45,7 +45,7 @@ Alternatively, you can install download or clone this repo and call `pip install
 
 ## Documentation
 
-The Templatetags can receive almost all hockeydata widget options, just write them down in python syntax (e.g. true --> True)
+The Templatetags can receive almost all hockeydata widget options, just write them down in python syntax (e.g. true --> True). 
 At the moment there is one special option for the game slider widget to get the gameLink parameter from a callback function. This is useful if you want a gameslider for multiple divisions (e.g. for all divsions of an association):
 
 ```html
