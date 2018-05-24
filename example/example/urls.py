@@ -29,7 +29,7 @@ urlpatterns = [
     path('knockout_stage/', views.knockout_stage, name='knockout_stage'),
 
     path('game_report/<str:gameId>/', views.game_report, name='game_report'),
-    path('game_livebox/<str:gameId>/', views.game_livebox, name='game_livebox'),
+    path('game_livebox/<str:gameId>/<str:divId>', views.game_livebox, name='game_livebox'),
 
     path('player_stats/', views.player_stats, name='player_stats'),
     path('full_player/<str:playerId>/', views.full_player, name='full_player'),

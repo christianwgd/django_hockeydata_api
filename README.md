@@ -31,20 +31,28 @@ Alternatively, you can install download or clone this repo and call `pip install
 
 {% hockeydata_css 'los_player_fullpage' %}
 
-
-
-
 {% hockeydata_js 'los_player_fullpage' %}
 {% endblock %}
 
 {% block content %}
 
-{% hockeydata_widget widgetName='hockeydata.los.Player.FullPage' divisionId='<yourDivisionId>' playerId=playerId %}
+{% hockeydata_widget domNode='#player' widgetName='hockeydata.los.Player.FullPage' divisionId='<yourDivisionId>' playerId=playerId %}
 
 {% endblock %}
+
+<div id='#player'></div>
 ```
 
 ## Documentation
+
+The Templatetags can receive almost all hockeydata widget options, just write them down in python syntax (e.g. true --> True)
+At the moment there is one special option for the game slider widget to get the gameLink parameter from a callback function. This is useful if you want a gameslider for multiple divisions (e.g. for all divsions of an association):
+
+```html
+{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='<yourDivisionId>' gameLink='/link_to_game/%G/%D' gameLinkFromCallback=True %}
+```
+
+``%G`` will be replaced by Game-ID and ``%D`` by Divsion-ID if ``gameLinkFromCallback`` is true.
 
 hockeydata api documentation: [http://apidocs.hockeydata.net/](http://apidocs.hockeydata.net/)
 

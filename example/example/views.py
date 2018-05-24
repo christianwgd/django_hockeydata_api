@@ -31,8 +31,8 @@ def game_report(request, gameId):
     return render(request, 'game_report.html', {'gameId': gameId})
 
 
-def game_livebox(request, gameId):
-    return render(request, 'game_livebox.html', {'gameId': gameId})
+def game_livebox(request, gameId, divId):
+    return render(request, 'game_livebox.html', {'gameId': gameId, 'divId': divId})
 
 
 def game_playbyplay(request, gameId):
