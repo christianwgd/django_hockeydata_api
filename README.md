@@ -71,7 +71,9 @@ The example app is created for running with django 2.0!
 
 4. copy example app to a folder of your choice
 
-5. run using 'python manage.py runserver'. No database or user is required, so you can skip 'python manage.py migrate'.
+5. replace all ``<divisionID>`` in the template files in example/templates with your Division-ID
+
+6. run using 'python manage.py runserver'. No database or user is required, so you can skip 'python manage.py migrate'.
 
 ## Bugs and suggestions
 
