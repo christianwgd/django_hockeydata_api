@@ -121,7 +121,7 @@ The example app is created for running with django 2.0!
 
 4. copy example app to a folder of your choice
 
-5. replace all <divisionID> in settings.py example settings with your Division-IDs
+5. set the EXAMPLE_DIV and EXAMPLE_DIV in settings.py to suitable division-ids
 
 6. run using 'python manage.py runserver'. No database or user is required, so you can skip 'python manage.py migrate'.
 
