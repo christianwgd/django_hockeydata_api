@@ -71,6 +71,41 @@ At the moment there is one special option for the game slider widget to get the 
 hockeydata api documentation: http://apidocs.hockeydata.net/
 hockeydata widget reference: https://apidocs.hockeydata.net/javascript-api/
 
+Settings
+''''''''
+
+The django-hockeydata-api requires some pre-configured settings.
+
+They can be modified by adding a dict variable called ``HOCKEYDATA`` in your ``settings.py`` and customizing the values ​​you want;
+
+The ``HOCKEYDATA`` dict variable contains these settings:
+
+.. code:: django
+
+    # hockeydata_api settings
+    HOCKEYDATA = {
+        
+        # Hockeydata Api-Key (you can get one from https://apidocs.hockeydata.net/api-key/)
+        API_KEY = ''
+
+        # Sport definition key: americanfootball|icehockey
+        SPORT = 'icehockey'  
+
+        # Base-URL to hockeydata static javascript and css 
+        STATIC = 'https://api.hockeydata.net/'
+
+        # Default template: los_template_dark|los_template_glass
+        # not set gives you los_template_default
+        DEFAULT_CSS = 'los_template_dark'
+
+        # localization i18n_x_los, where x is the ISO-639-1 language code (de = Germany)
+        # https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+        I18N = 'i18n_de_los'
+
+        # Base divison of organisation (e.g. association, club etc.)
+        # you can get this id from here: https://apidocs.hockeydata.net/division-finder/
+        BASE_DIV = '<yourBaseDivisionId>'
+}
 
 Example app
 -----------
@@ -86,7 +121,7 @@ The example app is created for running with django 2.0!
 
 4. copy example app to a folder of your choice
 
-5. replace all <divisionID> in the template files in example/templates with your Division-ID
+5. replace all <divisionID> in settings.py example settings with your Division-IDs
 
 6. run using 'python manage.py runserver'. No database or user is required, so you can skip 'python manage.py migrate'.
 

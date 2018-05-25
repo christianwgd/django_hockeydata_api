@@ -11,14 +11,18 @@ A Django package for simple use of Hockeydata Javascript API [https://apidocs.ho
 ## Installation
 
 1. Install using pip (not available at this time, TODO):
- ``pip install django_hockeydata_api``
-Alternatively, you can install download or clone this repo and call `pip install -e .`.
+
+    ``pip install django_hockeydata_api``
+
+    Alternatively, you can install download or clone this repo and call `pip install -e .`.
 
 2. Add to INSTALLED_APPS in your `settings.py`:
- ``'hockeydata_api',``
 
-3. In your templates, load the ``widget_tags`` library:
- ``{% load widget_tags %}``
+    `'hockeydata_api',`
+
+3. In your templates, load the `widget_tags` library:
+
+    `{% load widget_tags %}`
 
 ## Example template
 
@@ -62,6 +66,43 @@ hockeydata api documentation: [http://apidocs.hockeydata.net/](http://apidocs.ho
 
 hockeydata widget reference: [https://apidocs.hockeydata.net/javascript-api/](http://apidocs.hockeydata.net/javascript-api/)
 
+### Settings
+
+The django-hockeydata-api requires some pre-configured settings.
+
+They can be modified by adding a dict variable called `HOCKEYDATA` in your `settings.py` and customizing the values ​​you want;
+
+The `HOCKEYDATA` dict variable contains these settings:
+
+```python
+
+    # hockeydata_api settings
+    HOCKEYDATA = {
+
+        # Hockeydata Api-Key (you can get one from https://apidocs.hockeydata.net/api-key/)
+        API_KEY = ''
+
+        # Sport definition key: americanfootball|icehockey
+        SPORT = 'icehockey'
+
+        # Base-URL to hockeydata static javascript and css 
+        STATIC = 'https://api.hockeydata.net/'
+
+        # Default template: los_template_dark|los_template_glass
+        # not set gives you los_template_default
+        DEFAULT_CSS = 'los_template_dark'
+
+        # localization i18n_x_los, where x is the ISO-639-1 language code (de = Germany)
+        # https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+        I18N = 'i18n_de_los'
+
+        # Base divison of organisation (e.g. association, club etc.)
+        # you can get this id from here: https://apidocs.hockeydata.net/division-finder/
+        BASE_DIV = '<yourBaseDivisionId>'
+
+}
+```
+
 ## Example app
 
 The example app is created for running with django 2.0!
@@ -75,7 +116,7 @@ The example app is created for running with django 2.0!
 
 4. copy example app to a folder of your choice
 
-5. replace all ``<divisionID>`` in the template files in example/templates with your Division-ID
+5. set the EXAMPLE_DIV and EXAMPLE_DIV in settings.py to suitable division-ids
 
 6. run using 'python manage.py runserver'. No database or user is required, so you can skip 'python manage.py migrate'.
 
