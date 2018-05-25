@@ -126,11 +126,11 @@ HOCKEYDATA = {
 
     # Base divison of organisation (e.g. association, club etc.)
     # you can get this id from here: https://apidocs.hockeydata.net/division-finder/
-    'BASE_DIV': 'nev',
+    'BASE_DIV': '<yourBaseDivisionId>',
 }
 
 
 # for demo purpose fill this with appropriate leage divisions of your organisation
-EXAMPLE_DIV = 'nev-vln-hr'
+EXAMPLE_DIV = ''
 # playoff round
-EXAMPLE_PO_DIV = 'nev_rl_po'
+EXAMPLE_PO_DIV = ''
