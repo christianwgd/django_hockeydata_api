@@ -12,9 +12,9 @@
 {% hockeydata_js 'los_leaders' %}
 
 <!-- widgets -->
-{% hockeydata_widget domNode='#fieldPlayers' widgetName='hockeydata.los.Leaders' divisionId='<divisionID>' type='FieldPlayers' limit=10 rowLink='/full_player/%s/' %}
-{% hockeydata_widget domNode='#goalKeepers' widgetName='hockeydata.los.Leaders' divisionId='<divisionID>' type='Goalkeepers' rowLink='/full_player/%s/' %}
-{% hockeydata_widget domNode='#badBoys' widgetName='hockeydata.los.Leaders' divisionId='<divisionID>' type='BadBoys' limit=10 rowLink='/full_player/%s/' %}
+{% hockeydata_widget domNode='#fieldPlayers' widgetName='hockeydata.los.Leaders' divisionId=divId type='FieldPlayers' limit=10 rowLink='/full_player/%s/' %}
+{% hockeydata_widget domNode='#goalKeepers' widgetName='hockeydata.los.Leaders' divisionId=divId type='Goalkeepers' rowLink='/full_player/%s/' %}
+{% hockeydata_widget domNode='#badBoys' widgetName='hockeydata.los.Leaders' divisionId=divId type='BadBoys' limit=10 rowLink='/full_player/%s/' %}
 
 {% endblock %}
 

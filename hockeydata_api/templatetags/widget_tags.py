@@ -7,11 +7,16 @@ register = template.Library()
 
 
 @register.inclusion_tag('hockeydata_api/include/hockeydata_widget.html')
-def hockeydata_widget(domNode, widgetName, divisionId, *args, **kwargs):
+def hockeydata_widget(domNode, widgetName, divisionId=None, *args, **kwargs):
     options = kwargs
     options['domNode'] = domNode
     options['widgetName'] = widgetName
-    options['divisionId'] = divisionId
+    if divisionId:
+        options['divisionId'] = divisionId
+    else:
+        baseDivId = getattr(settings, 'HOCKEYDATA_BASE_DIV', None)
+        if baseDivId is not None:
+            options['divisionId'] = baseDivId
 
     apiKey = getattr(settings, 'HOCKEYDATA_API_KEY', '')
     sport = getattr(settings, 'HOCKEYDATA_SPORT', None)

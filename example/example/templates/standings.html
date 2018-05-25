@@ -12,8 +12,8 @@
 {% hockeydata_js 'los_gameslider' 'los_standings' %}
 
 <!-- widgets -->
-{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='<divisionID>' showTeamShortName=True showDivisionName=True gameLink='/game_report/%s/' %}
-{% hockeydata_widget domNode='#standings' widgetName='hockeydata.los.Standings' divisionId='<divisionID>' showTeamShortName=True rowLink='/team_fullpage/%s/' %}
+{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId=divId showTeamShortName=True showDivisionName=True gameLink='/game_report/%s/' %}
+{% hockeydata_widget domNode='#standings' widgetName='hockeydata.los.Standings' divisionId=divId showTeamShortName=True rowLink='/team_fullpage/%s/' %}
 
 {% endblock %}
 
