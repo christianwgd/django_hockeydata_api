@@ -6,6 +6,11 @@ from django.utils.safestring import mark_safe
 register = template.Library()
 
 
+def get_hd_attr(key, default=None):
+    hd_settings = getattr(settings, 'HOCKEYDATA', {})
+    return hd_settings.get(key, default)
+
+
 @register.inclusion_tag('hockeydata_api/include/hockeydata_widget.html')
 def hockeydata_widget(domNode, widgetName, divisionId=None, *args, **kwargs):
     options = kwargs
@@ -14,12 +19,13 @@ def hockeydata_widget(domNode, widgetName, divisionId=None, *args, **kwargs):
     if divisionId:
         options['divisionId'] = divisionId
     else:
-        baseDivId = getattr(settings, 'HOCKEYDATA_BASE_DIV', None)
+        #baseDivId = getattr(settings, 'HOCKEYDATA_BASE_DIV', None)
+        baseDivId = get_hd_attr('BASE_DIV')
         if baseDivId is not None:
             options['divisionId'] = baseDivId
 
-    apiKey = getattr(settings, 'HOCKEYDATA_API_KEY', '')
-    sport = getattr(settings, 'HOCKEYDATA_SPORT', None)
+    apiKey = get_hd_attr('API_KEY', '')
+    sport = get_hd_attr('SPORT')
     if sport is None:
         options['error'] = 'HOCKEYDATA_SPORT not found in settings'
     else:
@@ -31,10 +37,10 @@ def hockeydata_widget(domNode, widgetName, divisionId=None, *args, **kwargs):
 
 @register.simple_tag
 def hockeydata_css(*args, **kwargs):
-    url = getattr(settings, 'HOCKEYDATA_STATIC', '')
+    url = get_hd_attr('STATIC', '')
     if url is None:
         return mark_safe('Error: No HOCKEYDATA_STATIC in settings provided!')
-    default_css = getattr(settings, 'HOCEYDATA_DEFAULT_CSS', '')
+    default_css = get_hd_attr('DEFAULT_CSS', '')
 
     if default_css is not None:
         css_links = '<link href="{url}css/?{default}" rel="stylesheet">\n'.format(
@@ -53,15 +59,15 @@ def hockeydata_css(*args, **kwargs):
 
 @register.simple_tag
 def hockeydata_js(*args, **kwargs):
-    sport = getattr(settings, 'HOCKEYDATA_SPORT', None)
+    sport = get_hd_attr('SPORT')
     if sport is None:
         return mark_safe('Error: No HOCKEYDATA_SPORT in settings provided!')
-    i18n = getattr(settings, 'HOCKEYDATA_I18N', None)
+    i18n = get_hd_attr('I18N')
     i18n_opt = ''
     if i18n is not None:
         i18n_opt = '&{i18n}'.format(i18n=i18n)
 
-    url = getattr(settings, 'HOCKEYDATA_STATIC', '')
+    url = get_hd_attr('STATIC')
     if url is None:
         return mark_safe('Error: No HOCKEYDATA_STATIC in settings provided!')
 

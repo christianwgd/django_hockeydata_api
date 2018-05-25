@@ -108,29 +108,29 @@ STATIC_URL = '/static/'
 # hockeydata_api settings
 HOCKEYDATA = {
     # Hockeydata Api-Key (you can get it from https://apidocs.hockeydata.net/api-key/)
-    API_KEY = ''
+    'API_KEY': '',
 
     # Sport definition key: americanfootball|icehockey
-    SPORT = 'icehockey'  
+    'SPORT': 'icehockey',
 
     # Base-URL to hockeydata static javascript and css 
-    STATIC = 'https://api.hockeydata.net/'
+    'STATIC': 'https://api.hockeydata.net/',
 
     # Default template: los_template_dark|los_template_glass
     # not set gives you los_template_default
-    DEFAULT_CSS = 'los_template_dark'
+    'DEFAULT_CSS': 'los_template_dark',
 
     # localization i18n_x_los, where x is the ISO-639-1 language code (de = Germany)
     # https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
-    I18N = 'i18n_de_los'
+    'I18N': 'i18n_de_los',
 
     # Base divison of organisation (e.g. association, club etc.)
     # you can get this id from here: https://apidocs.hockeydata.net/division-finder/
-    BASE_DIV = ''
+    'BASE_DIV': 'nev',
 }
 
 
 # for demo purpose fill this with appropriate leage divisions of your organisation
-EXAMPLE_DIV = ''
+EXAMPLE_DIV = 'nev-vln-hr'
 # playoff round
-EXAMPLE_PO_DIV = ''
+EXAMPLE_PO_DIV = 'nev_rl_po'
