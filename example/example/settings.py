@@ -116,8 +116,7 @@ HOCKEYDATA = {
     # Base-URL to hockeydata static javascript and css 
     'STATIC': 'https://api.hockeydata.net/',
 
-    # Default template: los_template_dark|los_template_glass
-    # not set gives you los_template_default
+    # Default template: los_template_dark|los_template_glass|los_template_default
     'DEFAULT_CSS': 'los_template_dark',
 
     # localization i18n_x_los, where x is the ISO-639-1 language code (de = Germany)
