@@ -18,7 +18,7 @@ Installation
 
 1. Install using pip (not available at this time, TODO):
 
-   ``pip install django_hockeydata_api``
+   ``pip install git+https://git.wgdnet.de/cwiegand/django_hockeydata_api.git``
 
    Alternatively, you can install download or clone this repo and call ``pip install -e .``.
 
