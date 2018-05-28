@@ -32,10 +32,10 @@ $(document).ready(function() {
         if (options.gameLinkFromCallback === true && options.widgetName === 'hockeydata.los.GameSlider') {
             gameLink = options['gameLink'];
             options['gameLink'] = function(e){
-                                    var gameId = e[0];
-                                    var divisionId = e[1];
-                                    return gameLink.replace('%G', e[0]).replace('%D', e[1]);
-                                }
+                var gameId = e[0];
+                var divisionId = e[1];
+                return gameLink.replace('%G', e[0]).replace('%D', e[1]);
+            }
         }
         options['$domNode'] = $(options.domNode);
         var standings = new hockeydata.util.Widget(options);
