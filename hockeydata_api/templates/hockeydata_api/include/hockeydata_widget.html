@@ -38,6 +38,12 @@ $(document).ready(function() {
             }
         }
         options['$domNode'] = $(options.domNode);
+        if (options['paint'] !== undefined) {
+            var paintFunctionPtr = eval(options['paint']);
+            if (typeof paintFunctionPtr === "function") {
+                options['paint'] = paintFunctionPtr;
+            }
+        }
         var standings = new hockeydata.util.Widget(options);
     }
 });

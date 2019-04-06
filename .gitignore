@@ -11,6 +11,7 @@ db.*
 build/
 dist/
 django_hockeydata_api.egg-info/
+.project
 
 
 

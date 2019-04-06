@@ -1,12 +1,13 @@
+django-hockeydata-api
 =====================
-django_hockeydata_api
-=====================
+
 
 A Django package for simple use of Hockeydata Javascript API (https://apidocs.hockeydata.net/).
 
 
 Requirements
 ------------
+
 
 - Python 2.7+, 3.6+
 - Django >= 1.11 (tested with this, earlier versions might work also)
@@ -20,7 +21,8 @@ Installation
 
    ``pip install git+https://git.wgdnet.de/cwiegand/django_hockeydata_api.git``
 
-   Alternatively, you can install download or clone this repo and call ``pip install -e .``.
+   Alternatively, you can install download or clone this repo and
+   call ``pip install -e .``.
 
 2. Add to INSTALLED_APPS in your ``settings.py``:
 
@@ -49,7 +51,8 @@ Example template
     {% hockeydata_js 'los_player_fullpage' %}
 
     <!-- Hockeydata Widget -->
-    {% hockeydata_widget widgetName='hockeydata.los.Player.FullPage' divisionId='<yourDivisionId>' playerId=playerId %}
+    {% hockeydata_widget widgetName='hockeydata.los.Player.FullPage'
+                         divisionId='<yourDivisionId>' playerId=playerId %}
     {% endblock %}
 
     {% block content %}
@@ -60,27 +63,40 @@ Example template
 Documentation
 -------------
 
-The Templatetags can receive almost all hockeydata widget options, just write them down in python syntax (e.g. true --> True). 
-At the moment there is one special option for the game slider widget to get the gameLink parameter from a callback function. This is useful if you want a gameslider for multiple divisions (e.g. for all divsions of an association):
+The Templatetags can receive almost all hockeydata widget options, just write
+them down in python syntax (e.g. true --> True).
+At the moment there is one special option for the game slider widget to get
+the gameLink parameter from a callback function. This is useful if you want
+a gameslider for multiple divisions (e.g. for all divsions of an association):
 
-    .. code:: Django
-    {% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='<yourDivisionId>' gameLink='/link_to_game/%G/%D' gameLinkFromCallback=True %}
+.. code:: Django
 
-%G will be replaced by Game-ID and %D by Divsion-ID if gameLinkFromCallback is true.
+    {% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider'
+                         divisionId='<yourDivisionId>' gameLink='/link_to_game/%G/%D'
+                         gameLinkFromCallback=True %}
+
+%G will be replaced by Game-ID and %D by Divsion-ID if gameLinkFromCallback
+is true.
+
+Some widgets support a callback function, that is called when all javascript
+is done and the widget is built. Set this option as simple string (e.g ``paint``
+instead of ``paint()``). If no javascript function with this name exists,
+the option is ignored.
 
 hockeydata api documentation: http://apidocs.hockeydata.net/
 hockeydata widget reference: https://apidocs.hockeydata.net/javascript-api/
 
 Settings
-''''''''
+########
 
 The django-hockeydata-api requires some pre-configured settings.
 
-They can be modified by adding a dict variable called ``HOCKEYDATA`` in your ``settings.py`` and customizing the values ​​you want;
+They can be modified by adding a dict variable called ``HOCKEYDATA`` in your
+``settings.py`` and customizing the values ​​you want;
 
 The ``HOCKEYDATA`` dict variable contains these settings:
 
-    .. code:: python
+.. code:: python
 
     # hockeydata_api settings
     HOCKEYDATA = {
@@ -90,7 +106,7 @@ The ``HOCKEYDATA`` dict variable contains these settings:
         # Sport definition key: americanfootball|icehockey
         'SPORT': 'icehockey',
 
-        # Base-URL to hockeydata static javascript and css 
+        # Base-URL to hockeydata static javascript and css
         'STATIC': 'https://api.hockeydata.net/',
 
         # Default template: los_template_dark|los_template_glass|los_template_default
@@ -102,13 +118,14 @@ The ``HOCKEYDATA`` dict variable contains these settings:
 
         # Base divison of organisation (e.g. association, club etc.)
         # you can get this id from here: https://apidocs.hockeydata.net/division-finder/
-        'BASE_DIV': '<yourBaseDivisionId>',
+        # 1900 is the actual sample of austrian EBEL, which is also used for the hockeydata samples
+        'BASE_DIV': '1900',
     }
 
 Example app
 -----------
 
-The example app is created for running with django 2.0!
+The example app is created for running with django 2.0+!
 
 1. create virtualenv
 
@@ -121,13 +138,15 @@ The example app is created for running with django 2.0!
 
 5. set the EXAMPLE_DIV and EXAMPLE_DIV in settings.py to suitable division-ids
 
-6. run using 'python manage.py runserver'. No database or user is required, so you can skip 'python manage.py migrate'.
+6. run using 'python manage.py runserver'. No database or user is required,
+so you can skip 'python manage.py migrate'.
 
 
 Bugs and suggestions
 --------------------
 
-If you have found a bug or if you have a request for additional functionality, please use the issue tracker on GitHub.
+If you have found a bug or if you have a request for additional functionality,
+please use the issue tracker on the project:
 
 https://git.wgdnet.de/cwiegand/django_hockeydata_api/issues
 

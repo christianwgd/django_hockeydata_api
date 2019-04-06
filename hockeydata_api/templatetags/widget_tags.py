@@ -19,7 +19,6 @@ def hockeydata_widget(domNode, widgetName, divisionId=None, *args, **kwargs):
     if divisionId:
         options['divisionId'] = divisionId
     else:
-        #baseDivId = getattr(settings, 'HOCKEYDATA_BASE_DIV', None)
         baseDivId = get_hd_attr('BASE_DIV')
         if baseDivId is not None:
             options['divisionId'] = baseDivId

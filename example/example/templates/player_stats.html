@@ -3,6 +3,14 @@
 
 {% block extra_head_content %}
 {{ block.super }}
+<script>
+// sample paint() callback method
+function mypaint() {
+    console.log('Widget is rendered, you can do some javascript here...');
+}
+</script>
+
+
 <!-- Hockeydata css -->
 {% hockeydata_css 'los_leaders' %}
 <!-- custom widget css -->
@@ -12,7 +20,7 @@
 {% hockeydata_js 'los_leaders' %}
 
 <!-- widgets -->
-{% hockeydata_widget domNode='#fieldPlayers' widgetName='hockeydata.los.Leaders' divisionId=divId type='FieldPlayers' limit=10 rowLink='/full_player/%s/' %}
+{% hockeydata_widget domNode='#fieldPlayers' widgetName='hockeydata.los.Leaders' divisionId=divId type='FieldPlayers' limit=10 rowLink='/full_player/%s/' paint='mypaint' %}
 {% hockeydata_widget domNode='#goalKeepers' widgetName='hockeydata.los.Leaders' divisionId=divId type='Goalkeepers' rowLink='/full_player/%s/' %}
 {% hockeydata_widget domNode='#badBoys' widgetName='hockeydata.los.Leaders' divisionId=divId type='BadBoys' limit=10 rowLink='/full_player/%s/' %}
 

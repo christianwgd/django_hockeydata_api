@@ -125,7 +125,8 @@ HOCKEYDATA = {
 
     # Base divison of organisation (e.g. association, club etc.)
     # you can get this id from here: https://apidocs.hockeydata.net/division-finder/
-    'BASE_DIV': '<yourBaseDivisionId>',
+    # 1900 is the actual sample of austrian EBEL, which is also used for the hockeydata samples
+    'BASE_DIV': '1900',
 }
 
 

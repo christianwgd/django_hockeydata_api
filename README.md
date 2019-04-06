@@ -43,7 +43,8 @@ A Django package for simple use of Hockeydata Javascript API [https://apidocs.ho
 {% hockeydata_js 'los_player_fullpage' %}
 
 <!-- Hockeydata Widget -->
-{% hockeydata_widget domNode='#player' widgetName='hockeydata.los.Player.FullPage' divisionId='<yourDivisionId>' playerId=playerId %}
+{% hockeydata_widget domNode='#player' widgetName='hockeydata.los.Player.FullPage' 
+                     divisionId='<yourDivisionId>' playerId=playerId %}
 {% endblock %}
 
 {% block content %}
@@ -57,7 +58,8 @@ The Templatetags can receive almost all hockeydata widget options, just write th
 At the moment there is one special option for the game slider widget to get the gameLink parameter from a callback function. This is useful if you want a gameslider for multiple divisions (e.g. for all divsions of an association):
 
 ```html
-{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='<yourDivisionId>' gameLink='/link_to_game/%G/%D' gameLinkFromCallback=True %}
+{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='<yourDivisionId>' 
+                     gameLink='/link_to_game/%G/%D' gameLinkFromCallback=True %}
 ```
 
 ``%G`` will be replaced by Game-ID and ``%D`` by Divsion-ID if ``gameLinkFromCallback`` is true.
@@ -95,7 +97,8 @@ The `HOCKEYDATA` dict variable contains these settings:
 
         # Base divison of organisation (e.g. association, club etc.)
         # you can get this id from here: https://apidocs.hockeydata.net/division-finder/
-        'BASE_DIV': '<yourBaseDivisionId>',
+        # 1900 is the actual sample of austrian EBEL, which is also used for the hockeydata samples
+        'BASE_DIV': '1900',
     }
 ```
 
