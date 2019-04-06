@@ -65,6 +65,11 @@ At the moment there is one special option for the game slider widget to get the 
 
 ``%G`` will be replaced by Game-ID and ``%D`` by Divsion-ID if ``gameLinkFromCallback`` is true.
 
+Some widgets support a callback function, that is called when all javascript
+is done and the widget is built. Set this option as simple string (e.g ``paint``
+instead of ``paint()``). If no javascript function with this name exists,
+the option is ignored.
+
 hockeydata api documentation: [http://apidocs.hockeydata.net/](http://apidocs.hockeydata.net/)
 
 hockeydata widget reference: [https://apidocs.hockeydata.net/javascript-api/](http://apidocs.hockeydata.net/javascript-api/)
