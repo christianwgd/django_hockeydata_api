@@ -79,7 +79,7 @@ a gameslider for multiple divisions (e.g. for all divsions of an association):
 is true.
 
 Some widgets support a callback function, that is called when all javascript
-is done and the widget is built. Set this option as simple string (e.g ``paint``
+is done and the widget is rendered. Set this option as simple string (e.g ``paint``
 instead of ``paint()``). If no javascript function with this name exists,
 the option is ignored.
 
