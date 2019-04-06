@@ -58,8 +58,9 @@ The Templatetags can receive almost all hockeydata widget options, just write th
 At the moment there is one special option for the game slider widget to get the gameLink parameter from a callback function. This is useful if you want a gameslider for multiple divisions (e.g. for all divsions of an association):
 
 ```html
-{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' divisionId='<yourDivisionId>' 
-                     gameLink='/link_to_game/%G/%D' gameLinkFromCallback=True %}
+{% hockeydata_widget domNode='#gameslider' widgetName='hockeydata.los.GameSlider' 
+                     divisionId='<yourDivisionId>' gameLink='/link_to_game/%G/%D' 
+                     gameLinkFromCallback=True %}
 ```
 
 ``%G`` will be replaced by Game-ID and ``%D`` by Divsion-ID if ``gameLinkFromCallback`` is true.
