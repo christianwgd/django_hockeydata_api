@@ -131,6 +131,6 @@ HOCKEYDATA = {
 
 
 # for demo purpose fill this with appropriate leage divisions of your organisation
-EXAMPLE_DIV = ''
+EXAMPLE_DIV = '1903'
 # playoff round
-EXAMPLE_PO_DIV = ''
+EXAMPLE_PO_DIV = '3011'

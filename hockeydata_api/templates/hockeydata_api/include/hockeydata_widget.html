@@ -41,7 +41,7 @@ $(document).ready(function() {
         if (options['paint'] !== undefined) {
             var paintFunctionPtr = eval(options['paint']);
             if (typeof paintFunctionPtr === "function") {
-                options['paint'] = paintFunctionPtr;
+                options['paint'] = paintFunctionPtr();
             }
         }
         var standings = new hockeydata.util.Widget(options);
