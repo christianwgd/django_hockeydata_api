@@ -23,7 +23,7 @@ $(document).ready(function() {
                     options["additionalColumns"]= [{
                         "position": 0,
                         "column": "scheduledDate"
-                    }]
+                    }];
                 break;
             default:
         }
@@ -38,11 +38,18 @@ $(document).ready(function() {
             }
         }
         options['$domNode'] = $(options.domNode);
-        if (options['paint'] !== undefined) {
-            var paintFunctionPtr = eval(options['paint']);
-            if (typeof paintFunctionPtr === "function") {
-                options['paint'] = paintFunctionPtr();
+        if (options['paint']) {
+            try {
+                var paintFunctionPtr = eval(options['paint']);
+                if (typeof paintFunctionPtr === "function") {
+                    options['paint'] = paintFunctionPtr;
+                }
             }
+            catch(err) {
+                options['paint'] = undefined;
+                console.log('Function parameter for paint does not exist!');
+            }
+
         }
         var standings = new hockeydata.util.Widget(options);
     }

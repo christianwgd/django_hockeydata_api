@@ -5,8 +5,9 @@
 {{ block.super }}
 <script>
 // sample paint() callback method
-function mypaint() {
+var mypaint = function (data) {
     console.log('Widget is rendered, you can do some javascript here...');
+    console.log(data);
 }
 </script>
 

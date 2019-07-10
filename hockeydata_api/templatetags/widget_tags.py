@@ -19,9 +19,7 @@ def hockeydata_widget(domNode, widgetName, divisionId=None, *args, **kwargs):
     if divisionId:
         options['divisionId'] = divisionId
     else:
-        baseDivId = get_hd_attr('BASE_DIV')
-        if baseDivId is not None:
-            options['divisionId'] = baseDivId
+        options['error'] = 'DivisionId not provided.'
 
     apiKey = get_hd_attr('API_KEY', '')
     sport = get_hd_attr('SPORT')
