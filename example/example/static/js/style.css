@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Anton|Lato&display=swap');
 
 .-hd-util-intellitable-data > table > thead > tr {
     background-color: #666;
@@ -6,7 +6,7 @@
 }
 
 .-hd-util-intellitable-data {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
 .-hd-util-intellitable-data > table > tbody > tr:nth-child(odd) {
