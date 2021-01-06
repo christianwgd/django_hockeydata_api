@@ -1,3 +1,5 @@
+""" Silence pylint """
+
 import json
 from django.conf import settings
 from django import template
@@ -7,6 +9,7 @@ register = template.Library()
 
 
 def get_hd_attr(key, default=None):
+    """ Get the hockeydata specific settings """
     hd_settings = getattr(settings, 'HOCKEYDATA', {})
     return hd_settings.get(key, default)
 
@@ -69,6 +72,11 @@ def hockeydata_css(*args):
 
 @register.simple_tag
 def hockeydata_js(*args):
+    """
+    Render the hockeydata api javascript references
+    :param args:
+    :return:
+    """
     sport = get_hd_attr('SPORT')
     if sport is None:
         return mark_safe('Error: No HOCKEYDATA_SPORT in settings provided!')
@@ -86,6 +94,8 @@ def hockeydata_js(*args):
         widgets += '&{widget}'.format(widget=widget)
 
     js_template = '<script src="{url}js/{widgets}&los_configuration_{sport}{i18n}"></script>'
-    js = js_template.format(url=url, widgets=widgets,
-                            sport=sport, i18n=i18n_opt)
-    return mark_safe(js)
+    js_assets = js_template.format(
+        url=url, widgets=widgets,
+        sport=sport, i18n=i18n_opt
+    )
+    return mark_safe(js_assets)
