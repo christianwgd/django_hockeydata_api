@@ -1,0 +1,27 @@
+name: Format
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  Formatting:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.8
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install Django
+        run: pip install django
+      - name: Install pylint
+        run: pip install pylint
+
+      - name: Check format
+        run: find ./django_bootstrap_icons -type f -name "*.py" | xargs pylint
+    
