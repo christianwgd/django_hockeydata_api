@@ -23,5 +23,5 @@ jobs:
         run: pip install pylint
 
       - name: Check format
-        run: find ./django_bootstrap_icons -type f -name "*.py" | xargs pylint
+        run: find ./hockeydata_api -type f -name "*.py" | xargs pylint
     
