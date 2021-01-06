@@ -1,1 +1,2 @@
-__version__ = '0.0.1'
+""" Silence pylint """
+__version__ = '0.0.4'
