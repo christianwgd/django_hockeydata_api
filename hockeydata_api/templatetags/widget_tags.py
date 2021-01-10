@@ -14,29 +14,29 @@ def get_hd_attr(key, default=None):
 
 
 @register.inclusion_tag('hockeydata_api/include/hockeydata_widget.html')
-def hockeydata_widget(domNode, widgetName, divisionId=None, *args, **kwargs):
+def hockeydata_widget(dom_node, widget_name, div_id=None, **kwargs):
     """ hockeydata widget tag """
     options = kwargs
-    options['domNode'] = domNode
-    options['widgetName'] = widgetName
-    if divisionId:
-        options['divisionId'] = divisionId
+    options['domNode'] = dom_node
+    options['widgetName'] = widget_name
+    if div_id:
+        options['divisionId'] = div_id
     else:
         options['error'] = 'DivisionId not provided.'
 
-    apiKey = get_hd_attr('API_KEY', '')
+    api_key = get_hd_attr('API_KEY', '')
     sport = get_hd_attr('SPORT')
     if sport is None:
         options['error'] = 'HOCKEYDATA_SPORT not found in settings'
     else:
-        options['apiKey'] = apiKey
+        options['apiKey'] = api_key
         options['sport'] = sport
 
     return {'options': json.dumps(options)}
 
 
 @register.simple_tag
-def hockeydata_css(*args, **kwargs):
+def hockeydata_css(*args):
     """ hockeydata css tag """
     url = get_hd_attr('STATIC', '')
     if url is None:
@@ -59,7 +59,7 @@ def hockeydata_css(*args, **kwargs):
 
 
 @register.simple_tag
-def hockeydata_js(*args, **kwargs):
+def hockeydata_js(*args):
     """ hockeydata js tag """
     sport = get_hd_attr('SPORT')
     if sport is None:
