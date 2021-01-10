@@ -78,6 +78,6 @@ def hockeydata_js(*args):
         widgets += '&{widget}'.format(widget=widget)
 
     js_template = '<script src="{url}js/{widgets}&los_configuration_{sport}{i18n}"></script>'
-    js = js_template.format(url=url, widgets=widgets,
+    js_assets = js_template.format(url=url, widgets=widgets,
                             sport=sport, i18n=i18n_opt)
-    return mark_safe(js)
+    return mark_safe(js_assets)
