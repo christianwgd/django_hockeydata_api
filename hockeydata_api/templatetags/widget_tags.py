@@ -1,3 +1,4 @@
+""" widget tags """
 import json
 from django.conf import settings
 from django import template
@@ -7,12 +8,14 @@ register = template.Library()
 
 
 def get_hd_attr(key, default=None):
+    """  get hd settings """
     hd_settings = getattr(settings, 'HOCKEYDATA', {})
     return hd_settings.get(key, default)
 
 
 @register.inclusion_tag('hockeydata_api/include/hockeydata_widget.html')
 def hockeydata_widget(domNode, widgetName, divisionId=None, *args, **kwargs):
+    """ hockeydata widget tag """
     options = kwargs
     options['domNode'] = domNode
     options['widgetName'] = widgetName
@@ -34,6 +37,7 @@ def hockeydata_widget(domNode, widgetName, divisionId=None, *args, **kwargs):
 
 @register.simple_tag
 def hockeydata_css(*args, **kwargs):
+    """ hockeydata css tag """
     url = get_hd_attr('STATIC', '')
     if url is None:
         return mark_safe('Error: No HOCKEYDATA_STATIC in settings provided!')
@@ -56,6 +60,7 @@ def hockeydata_css(*args, **kwargs):
 
 @register.simple_tag
 def hockeydata_js(*args, **kwargs):
+    """ hockeydata js tag """
     sport = get_hd_attr('SPORT')
     if sport is None:
         return mark_safe('Error: No HOCKEYDATA_SPORT in settings provided!')
